@@ -6,24 +6,27 @@
   text-decoration: none;
 }
 
+/* Image fills its area (Figma): 16px external margins, contained. */
 .image {
   width: 100%;
   height: auto;
   aspect-ratio: 1 / 1;
   object-fit: contain;
-  padding: var(--space-8);
+  padding: 16px 16px 0;
 }
 
+/* 24px between the image and the text block; bottom-aligned when a taller
+   sibling card stretches the row. */
 .meta {
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
-  padding: 0 var(--space-3) var(--space-4);
   margin-top: auto;
+  padding: 24px 16px 16px;
 }
 
 .brand {
-  font-size: var(--font-size-xs);
+  font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   color: var(--color-text-muted);
@@ -36,12 +39,12 @@
 }
 
 .name {
-  font-size: var(--font-size-sm);
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .price {
-  font-size: var(--font-size-sm);
+  font-size: 12px;
   white-space: nowrap;
 }

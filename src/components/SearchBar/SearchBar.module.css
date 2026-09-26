@@ -1,5 +1,6 @@
 .wrapper {
   position: relative;
+  /* Navbar bottom padding (24) + 24 = the 48px gap from the Figma mockup. */
   margin-top: var(--space-12);
 }
 
@@ -15,7 +16,7 @@
 }
 
 .input::placeholder {
-  color: var(--color-text-muted);
+  color: var(--color-text-input-disabled);
 }
 
 .input:focus-visible {

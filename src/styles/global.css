@@ -7,7 +7,9 @@
 body {
   margin: 0;
   font-family: var(--font-family);
-  background: var(--color-bg);
+  /* Every text in the design uses the light weight; headings included. */
+  font-weight: 300;
+  background: var(--color-surface);
   color: var(--color-text);
   -webkit-font-smoothing: antialiased;
 }

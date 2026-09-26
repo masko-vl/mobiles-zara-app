@@ -1,6 +1,5 @@
 .canvas {
   background: var(--color-surface);
-  margin: 0 var(--canvas-margin);
   min-height: 100vh;
 }
 

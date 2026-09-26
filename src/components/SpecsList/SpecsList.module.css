@@ -5,7 +5,6 @@
 
 .heading {
   font-size: var(--font-size-md);
-  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin: 0 0 var(--space-6);

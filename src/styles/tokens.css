@@ -1,18 +1,17 @@
 /* Design tokens extracted from the Figma desktop design. */
 :root {
-  --color-bg: #f4f4f4;
   --color-surface: #ffffff;
-  --color-text: #141414;
-  --color-text-muted: #757575;
-  --color-border: #e3e3e3;
+  --color-text: #000000;
+  --color-text-muted: #79736d;
+  --color-text-input-disabled: #aaaaaa;
+  --color-border: #000000;
   --color-accent: #141414;
 
-  /* Challenge requirement: Helvetica, Arial, sans-serif. */
   --font-family: Helvetica, Arial, sans-serif;
 
-  --font-size-xs: 10px;
-  --font-size-sm: 11px;
-  --font-size-md: 14px;
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
 
   --space-1: 4px;
   --space-2: 8px;
@@ -22,22 +21,19 @@
   --space-8: 32px;
   --space-12: 48px;
 
-  --canvas-margin: 48px;
-  --content-padding: 48px;
+  --content-padding: 100px;
 }
 
 /* Breakpoints derived from the Figma canvases: Desktop 1920, Tablet 834,
    Mobile 393. Tablet is 768-1023, mobile below 768. */
 @media (max-width: 1023px) {
   :root {
-    --canvas-margin: 24px;
-    --content-padding: 32px;
+    --content-padding: 40px;
   }
 }
 
 @media (max-width: 767px) {
   :root {
-    --canvas-margin: 8px;
     --content-padding: 16px;
   }
 }

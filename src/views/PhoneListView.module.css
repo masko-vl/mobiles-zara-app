@@ -31,7 +31,7 @@
 }
 
 .resultsCount {
-  margin: var(--space-3) 0 var(--space-6);
+  margin: var(--space-4) 0 var(--space-12);
   font-size: var(--font-size-xs);
   text-transform: uppercase;
   letter-spacing: 0.5px;
