@@ -1,0 +1,50 @@
+.group {
+  border: 0;
+  padding: 0;
+  margin: 0 0 var(--space-6);
+}
+
+.legend {
+  padding: 0;
+  margin-bottom: var(--space-3);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-muted);
+}
+
+.legend strong {
+  color: var(--color-text);
+  font-weight: 400;
+}
+
+.options {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.swatch,
+.swatchSelected {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  border: 1px solid var(--color-border);
+}
+
+.swatchSelected {
+  outline: 1px solid var(--color-text);
+  outline-offset: 2px;
+}
+
+.swatch:focus-within,
+.swatchSelected:focus-within {
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
+}
+
+.selectedName {
+  margin: var(--space-3) 0 0;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  min-height: 1em;
+}
