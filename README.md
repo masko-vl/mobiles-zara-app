@@ -152,9 +152,18 @@ The challenge brief lists Node 18 in the stack, but this project requires **Node
 > unreachable from this app's usage (no external redirects, no SSR). Trading brief
 > literalism for current, dependency-audit-clean tooling was a deliberate decision.
 
+## Development behavior
+
+While running the dev server, the first request to `/products` may appear as
+`(canceled)` in the browser's Network panel and immediately be followed by a
+successful identical request. This is intentional: React's StrictMode mounts every
+component twice in development to verify that effects clean up after themselves, and
+our `AbortController` cleanup aborts the superseded request. In a production build
+(`npm run build && npm run preview`) only one request is ever made.
+
 ## Testing
 
-73 tests, all behavior-focused (no implementation-detail assertions):
+74 tests, all behavior-focused (no implementation-detail assertions):
 
 - **Pure logic**: cart reducer (merge by identity, separate lines, removal, restore),
   price formatting, debounce timing (fake timers).
