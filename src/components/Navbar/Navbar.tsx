@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
-import { BagIcon } from '../BagIcon';
+import cartActive from '../../assets/cart-active.png';
+import cartInactive from '../../assets/cart-inactive.png';
+import logo from '../../assets/logo.png';
 import styles from './Navbar.module.css';
 
 interface NavbarProps {
@@ -7,24 +9,28 @@ interface NavbarProps {
 }
 
 /**
- * Top navigation bar: logo link to home plus a link to the cart showing how
- * many items it holds. `cartCount` is 0 until the CartContext phase wires it.
- * Router `Link`s render real anchors with client-side navigation.
+ * Top navigation bar (Figma): logo link to home plus a link to the cart with
+ * its live item count. The cart icon switches between its inactive and active
+ * states depending on whether the cart holds any items.
  */
 export function Navbar({ cartCount }: NavbarProps) {
   return (
     <header className={styles.navbar}>
       <Link to="/" className={styles.logoLink} aria-label="Smartphones store, go to home page">
-        <span className={styles.logo} aria-hidden="true">
-          M✱BST
-        </span>
+        <img src={logo} alt="" width={74} height={28} className={styles.logo} />
       </Link>
       <Link
         to="/cart"
         className={styles.cartLink}
         aria-label={`Shopping cart, ${cartCount} ${cartCount === 1 ? 'item' : 'items'}`}
       >
-        <BagIcon />
+        <img
+          src={cartCount > 0 ? cartActive : cartInactive}
+          alt=""
+          width={18}
+          height={18}
+          className={styles.cartIcon}
+        />
         <span aria-hidden="true">{cartCount}</span>
       </Link>
     </header>

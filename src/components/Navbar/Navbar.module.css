@@ -2,25 +2,42 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--space-6) var(--content-padding) var(--space-2);
+  padding: 28px 100px 24px;
 }
 
 .logoLink {
+  display: inline-flex;
   text-decoration: none;
-  color: inherit;
 }
 
 .logo {
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 1px;
+  display: block;
 }
 
 .cartLink {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-1);
+  gap: 6px;
   color: inherit;
   text-decoration: none;
   font-size: var(--font-size-md);
+  font-style: light;
+}
+
+.cartIcon {
+  display: block;
+}
+
+/* Tablet (Figma 834): logo left 40, cart right 40. */
+@media (max-width: 1023px) {
+  .navbar {
+    padding: 28px 40px 24px;
+  }
+}
+
+/* Mobile (Figma 393): logo left 16, cart right 16. */
+@media (max-width: 767px) {
+  .navbar {
+    padding: 28px 16px 24px;
+  }
 }
