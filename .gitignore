@@ -27,3 +27,6 @@ Thumbs.db
 
 # ZCode workspace file
 .zcodeignore
+
+# ZCode workspace artifacts
+.zcode/
