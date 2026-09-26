@@ -28,10 +28,13 @@ export function PhoneListView() {
         Smartphone catalog
       </h1>
 
+      {/* Figma "Loading": a full-width rule under the navbar while data loads. */}
+      {loading && <div className={styles.loadingRule} aria-hidden="true" />}
+
       <SearchBar value={query} onChange={setQuery} />
 
-      {listLoading && (
-        <p role="status" className={styles.status}>
+      {loading && (
+        <p role="status" className="visually-hidden">
           Loading smartphones...
         </p>
       )}

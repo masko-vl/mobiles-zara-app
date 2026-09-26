@@ -2,6 +2,12 @@
   padding: 0 var(--content-padding) var(--space-12);
 }
 
+/* Figma "Loading" state: a full-width rule right under the navbar. */
+.loadingRule {
+  border-top: 1px solid var(--color-border);
+  margin: 0 calc(-1 * var(--content-padding));
+}
+
 .status {
   padding: var(--space-12) 0;
   font-size: var(--font-size-md);

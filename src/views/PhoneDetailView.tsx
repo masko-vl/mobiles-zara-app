@@ -29,10 +29,14 @@ export function PhoneDetailView() {
   }, [id]);
 
   if (loading) {
+    // Figma "Loading": chrome only, with the rule under the navbar. The
+    // status stays available to screen readers while the area is blank.
     return (
-      <p role="status" className={styles.status}>
-        Loading phone...
-      </p>
+      <div className={styles.loadingState}>
+        <p role="status" className="visually-hidden">
+          Loading phone...
+        </p>
+      </div>
     );
   }
 
