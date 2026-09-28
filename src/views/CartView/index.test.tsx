@@ -2,10 +2,10 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import { beforeEach, describe, expect, it } from 'vitest';
-import { CartProvider } from '../context/CartProvider';
-import { CART_STORAGE_KEY } from '../context/cart-context';
-import type { CartItem } from '../models/cart';
-import { CartView } from './CartView';
+import { CartProvider } from '../../context/CartProvider';
+import { CART_STORAGE_KEY } from '../../context/cart-context';
+import type { CartItem } from '../../models/cart';
+import { CartView } from '.';
 
 function makeItem(overrides: Partial<CartItem> = {}): CartItem {
   return {

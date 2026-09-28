@@ -2,13 +2,13 @@ import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { usePhone } from '../hooks/usePhone';
-import type { PhoneDetail } from '../models/phone';
-import { CartProvider } from '../context/CartProvider';
-import { CART_STORAGE_KEY } from '../context/cart-context';
-import { PhoneDetailView } from './PhoneDetailView';
+import { usePhone } from '../../hooks/usePhone';
+import type { PhoneDetail } from '../../models/phone';
+import { CartProvider } from '../../context/CartProvider';
+import { CART_STORAGE_KEY } from '../../context/cart-context';
+import { PhoneDetailView } from '.';
 
-vi.mock('../hooks/usePhone', () => ({ usePhone: vi.fn() }));
+vi.mock('../../hooks/usePhone', () => ({ usePhone: vi.fn() }));
 
 const mockedUsePhone = vi.mocked(usePhone);
 

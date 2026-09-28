@@ -2,9 +2,3 @@
   background: var(--color-surface);
   min-height: 100vh;
 }
-
-.placeholder {
-  padding: var(--space-12) var(--content-padding);
-  font-size: var(--font-size-md);
-  color: var(--color-text-muted);
-}

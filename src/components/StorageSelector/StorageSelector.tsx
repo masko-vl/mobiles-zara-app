@@ -15,9 +15,7 @@ interface StorageSelectorProps {
 export function StorageSelector({ options, selected, onChange }: StorageSelectorProps) {
   return (
     <fieldset className={styles.group}>
-      <legend className={styles.legend}>
-        <strong>Storage</strong> — how much space do you need?
-      </legend>
+      <legend className={styles.legend}>Storage. How much space do you need?</legend>
       <div className={styles.options}>
         {options.map((option) => {
           const isSelected = option.capacity === selected?.capacity;

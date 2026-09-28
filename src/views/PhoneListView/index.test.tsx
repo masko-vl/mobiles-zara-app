@@ -3,14 +3,14 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { MemoryRouter } from 'react-router-dom';
-import { usePhones } from '../hooks/usePhones';
-import { SEARCH_DEBOUNCE_MS } from '../hooks/usePhoneSearch';
-import { searchPhones } from '../services/phoneService';
-import type { PhoneSummary } from '../models/phone';
-import { PhoneListView } from './PhoneListView';
+import { usePhones } from '../../hooks/usePhones';
+import { SEARCH_DEBOUNCE_MS } from '../../hooks/usePhoneSearch';
+import { searchPhones } from '../../services/phoneService';
+import type { PhoneSummary } from '../../models/phone';
+import { PhoneListView } from '.';
 
-vi.mock('../hooks/usePhones', () => ({ usePhones: vi.fn() }));
-vi.mock('../services/phoneService', () => ({ searchPhones: vi.fn() }));
+vi.mock('../../hooks/usePhones', () => ({ usePhones: vi.fn() }));
+vi.mock('../../services/phoneService', () => ({ searchPhones: vi.fn() }));
 
 const mockedUsePhones = vi.mocked(usePhones);
 const mockedSearchPhones = vi.mocked(searchPhones);

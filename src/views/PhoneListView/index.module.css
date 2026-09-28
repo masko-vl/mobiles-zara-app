@@ -2,7 +2,6 @@
   padding: 0 var(--content-padding) var(--space-12);
 }
 
-/* Figma "Loading" state: a full-width rule right under the navbar. */
 .loadingRule {
   border-top: 1px solid var(--color-border);
   margin: 0 calc(-1 * var(--content-padding));
@@ -20,7 +19,6 @@
   font-family: inherit;
   font-size: var(--font-size-sm);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
   padding: var(--space-2) var(--space-4);
   cursor: pointer;
 }
@@ -34,7 +32,6 @@
   margin: var(--space-4) 0 var(--space-12);
   font-size: var(--font-size-xs);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
 .grid {
@@ -52,14 +49,14 @@
   border-bottom: 1px solid var(--color-border);
 }
 
-/* Tablet (Figma 834): two columns. */
+/* Tablet: two columns. */
 @media (max-width: 1023px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Mobile (Figma 393): single column. */
+/* Mobile: single column. */
 @media (max-width: 767px) {
   .grid {
     grid-template-columns: 1fr;

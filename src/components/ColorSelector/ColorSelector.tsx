@@ -16,18 +16,12 @@ interface ColorSelectorProps {
 export function ColorSelector({ options, selected, onChange }: ColorSelectorProps) {
   return (
     <fieldset className={styles.group}>
-      <legend className={styles.legend}>
-        <strong>Color</strong> — pick your favorite
-      </legend>
+      <legend className={styles.legend}>Color. Pick your favorite.</legend>
       <div className={styles.options}>
         {options.map((option) => {
           const isSelected = option.name === selected?.name;
           return (
-            <label
-              key={option.name}
-              className={isSelected ? styles.swatchSelected : styles.swatch}
-              style={{ backgroundColor: option.hexCode }}
-            >
+            <label key={option.name} className={isSelected ? styles.swatchSelected : styles.swatch}>
               <input
                 type="radio"
                 name="color"
@@ -36,6 +30,8 @@ export function ColorSelector({ options, selected, onChange }: ColorSelectorProp
                 onChange={() => onChange(option)}
                 className="visually-hidden"
               />
+
+              <span className={styles.fill} style={{ backgroundColor: option.hexCode }} />
               <span className="visually-hidden">{option.name}</span>
             </label>
           );

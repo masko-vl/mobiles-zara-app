@@ -1,46 +1,50 @@
 .group {
   border: 0;
   padding: 0;
-  margin: 0 0 var(--space-6);
+  margin: 0 0 40px;
 }
 
 .legend {
   padding: 0;
-  margin-bottom: var(--space-3);
-  font-size: var(--font-size-xs);
+  margin-bottom: 24px;
+  font-size: var(--font-size-md);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--color-text-muted);
-}
-
-.legend strong {
   color: var(--color-text);
 }
 
 .options {
   display: flex;
-  gap: var(--space-2);
 }
 
 .option,
 .optionSelected {
-  border: 1px solid var(--color-border);
-  padding: var(--space-2) var(--space-4);
-  font-size: var(--font-size-sm);
+  position: relative;
+  border: 1px solid var(--color-border-subtle);
+  padding: 24px;
+  font-size: 14px;
   cursor: pointer;
   background: var(--color-surface);
 }
 
+.option + .option,
+.optionSelected + .option,
+.optionSelected + .optionSelected {
+  margin-left: -1px;
+}
+
 .optionSelected {
   border-color: var(--color-text);
+  z-index: 1;
 }
 
 .option:hover {
   border-color: var(--color-text-muted);
+  z-index: 1;
 }
 
-.option:focus-within,
-.optionSelected:focus-within {
+/* Keyboard-only focus ring: mouse clicks show just the black border. */
+.option:has(input:focus-visible),
+.optionSelected:has(input:focus-visible) {
   outline: 2px solid var(--color-text);
   outline-offset: 2px;
 }

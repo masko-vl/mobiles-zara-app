@@ -14,13 +14,24 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* UA stylesheets make headings bold; that beats inheritance, so reset them
+   to keep the global light weight. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+}
+
 img {
   max-width: 100%;
   display: block;
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-text);
   outline-offset: 2px;
 }
 

@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { usePhones } from '../hooks/usePhones';
-import { useDebouncedValue } from '../hooks/useDebouncedValue';
-import { SEARCH_DEBOUNCE_MS, usePhoneSearch } from '../hooks/usePhoneSearch';
-import { PhoneCard } from '../components/PhoneCard/PhoneCard';
-import { SearchBar } from '../components/SearchBar/SearchBar';
-import styles from './PhoneListView.module.css';
+import { usePhones } from '../../hooks/usePhones';
+import { useDebouncedValue } from '../../hooks/useDebouncedValue';
+import { SEARCH_DEBOUNCE_MS, usePhoneSearch } from '../../hooks/usePhoneSearch';
+import { PhoneCard } from '../../components/PhoneCard/PhoneCard';
+import { SearchBar } from '../../components/SearchBar/SearchBar';
+import styles from './index.module.css';
 
 /**
  * Home view: debounced API-backed search, results counter and a grid with
@@ -28,7 +28,6 @@ export function PhoneListView() {
         Smartphone catalog
       </h1>
 
-      {/* Figma "Loading": a full-width rule under the navbar while data loads. */}
       {loading && <div className={styles.loadingRule} aria-hidden="true" />}
 
       <SearchBar value={query} onChange={setQuery} />

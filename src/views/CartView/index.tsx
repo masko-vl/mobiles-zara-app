@@ -1,15 +1,9 @@
 import { Link } from 'react-router-dom';
-import { useCart } from '../context/useCart';
-import { makeCartKey } from '../models/cart';
-import { formatPrice } from '../utils/format';
-import styles from './CartView.module.css';
+import { useCart } from '../../context/useCart';
+import { makeCartKey } from '../../models/cart';
+import { formatPrice } from '../../utils/format';
+import styles from './index.module.css';
 
-/**
- * Cart view (Figma): line items with image, name, chosen storage and color,
- * unit price and a remove action; footer pinned to the bottom with
- * "Continue shopping", the total and a Pay button. The payment flow itself
- * is out of scope of the challenge, so Pay is rendered but inert.
- */
 export function CartView() {
   const { items, totalQuantity, totalPrice, removeItem } = useCart();
 
@@ -67,12 +61,7 @@ export function CartView() {
               <span className={styles.totalLabel}>Total</span>
               <span className={styles.totalAmount}>{formatPrice(totalPrice)}</span>
             </div>
-            <button
-              type="button"
-              className={styles.payButton}
-              // Payment is out of scope of the challenge.
-              onClick={() => {}}
-            >
+            <button type="button" className={styles.payButton} onClick={() => {}}>
               Pay
             </button>
           </>

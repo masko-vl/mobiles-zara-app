@@ -28,7 +28,6 @@
 .brand {
   font-size: 10px;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
   color: var(--color-text-muted);
 }
 
@@ -41,7 +40,6 @@
 .name {
   font-size: 12px;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
 .price {
