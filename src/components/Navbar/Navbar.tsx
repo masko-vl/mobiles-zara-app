@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import cartActive from '../../assets/cart-active.png';
 import cartInactive from '../../assets/cart-inactive.png';
-import logo from '../../assets/logo.png';
 import styles from './Navbar.module.css';
 
 interface NavbarProps {
@@ -17,7 +16,7 @@ export function Navbar({ cartCount }: NavbarProps) {
   return (
     <header className={styles.navbar}>
       <Link to="/" className={styles.logoLink} aria-label="Smartphones store, go to home page">
-        <img src={logo} alt="" width={74} height={28} className={styles.logo} />
+        <img src="/logo.png" alt="" width={74} height={28} className={styles.logo} />
       </Link>
       <Link
         to="/cart"
