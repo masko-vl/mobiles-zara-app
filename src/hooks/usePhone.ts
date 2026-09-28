@@ -27,7 +27,7 @@ export function usePhone(id: string | undefined): UsePhoneState & { retry: () =>
     const controller = new AbortController();
     let active = true;
 
-    setState({ phone: null, loading: true, error: null });
+    setState((prev) => ({ ...prev, loading: true, error: null }));
 
     getPhoneById(id, controller.signal)
       .then((phone) => {

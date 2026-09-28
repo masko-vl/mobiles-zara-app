@@ -49,8 +49,10 @@ describe('usePhone', () => {
     expect(result.current.error).toBeNull();
   });
 
-  it('refetches when the id changes', async () => {
-    mockedGetPhoneById.mockResolvedValue(detail);
+  it('refetches when the id changes, keeping the stale phone while loading', async () => {
+    const other: PhoneDetail = { ...detail, id: 'GPX-8A', name: 'Pixel 8a' };
+    mockedGetPhoneById.mockResolvedValueOnce(detail);
+    mockedGetPhoneById.mockResolvedValueOnce(other);
 
     const { result, rerender } = renderHook(({ id }) => usePhone(id), {
       initialProps: { id: 'SMG-S24U' },
@@ -59,12 +61,13 @@ describe('usePhone', () => {
 
     rerender({ id: 'GPX-8A' });
     expect(result.current.loading).toBe(true);
-    expect(result.current.phone).toBeNull();
+    // Stale-while-revalidate: the page must not shrink to a blank loading
+    // state between products.
+    expect(result.current.phone).toEqual(detail);
     expect(mockedGetPhoneById).toHaveBeenLastCalledWith('GPX-8A', expect.any(AbortSignal));
 
-    // Flush the pending fetch so its state update lands inside this test.
-    await act(async () => {});
-    await waitFor(() => expect(result.current.loading).toBe(false));
+    await waitFor(() => expect(result.current.phone).toEqual(other));
+    expect(result.current.loading).toBe(false);
   });
 
   it('exposes the error (e.g. 404 not found) and supports retry', async () => {
